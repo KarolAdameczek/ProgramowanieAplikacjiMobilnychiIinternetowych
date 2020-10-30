@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="/static/main.css">
+        <link rel="icon" href="/static/Adameczkomat.png">
+        <title>Adameczkomat</title>
+        {% block headers %}{% endblock %}
+    </head>
+    <body>
+        <header class="bg-dark">
+            <a href="/"><img src="/static/Adameczkomat.png" class="logo-image" /></a>
+                <br><span class="company-name-span">Adameczkomat</span>
+                <br>Karol Adameczek
+        </header>
+        <nav class="navbar">
+            <section class="navbar-item-section"><a class="navbar-link" href="/">Strona główna</a></section>
+            <section class="navbar-item-section"><a class="navbar-link" href="/sender/sign-up">Rejestracja</a></section>
+        </nav>
+        <main>
+            {% block content %}{% endblock %}
+        </main>
+        <footer>2020 Karol Adameczek<br><a class="repository-link" href="google.com">repozytorium</a></footer>
+    </body>
+<html></html>

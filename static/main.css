@@ -35,6 +35,11 @@ footer {
     align-content: center;
 }
 
+main {
+    width: 50%;
+    margin: auto;
+}
+
 .navbar{
     background-color: #282d31;
     margin-bottom: 20px;
@@ -70,16 +75,9 @@ footer {
     color: #000000;
 }
 
-
-
 .logo-image {
     width: 30%;
     height: auto;
-}
-
-.main-content {
-    width: 50%;
-    margin: auto;
 }
 
 .company-name-span {

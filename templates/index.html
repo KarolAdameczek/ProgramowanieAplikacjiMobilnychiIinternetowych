@@ -1,34 +1,13 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-        <link rel="stylesheet" type="text/css" href="/static/main.css">
-        <script src="/static/main.js"></script>
-        <link rel="icon" href="/static/Adameczkomat.png">
-        <title>Adameczkomat</title>
-    </head>
-    <body>
-        <header class="bg-dark">
-            <a href="/"><img src="/static/Adameczkomat.png" class="logo-image" /></a>
-                <br><span class="company-name-span">Adameczkomat</span>
-                <br>Karol Adameczek
-        </header>
-        <nav class="navbar">
-            <section class="navbar-item-section"><a class="navbar-link" href="/">Strona główna</a></section>
-            <section class="navbar-item-section"><a class="navbar-link" href="/sender/sign-up">Rejestracja</a></section>
-        </nav>
-        <section class="main-content">
-            <h1>Strona główna</h1>
-            <p class="company-description">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-            </p>
-            <h2>Opinie klientów</h2>
-            <ul class="customer-opinions">
-                <li><span class="opinion-quote">„Szybki jak jaszczurka, ostry jak przecinak”</span> ~Zygzak McQueen</li>
-                <li><span class="opinion-quote">„Niech żyją paczkomaty”</span> ~Klocuch</li>
-                <li><span class="opinion-quote">„Tylko jedno w głowie mam, paczki wysyłam”</span> ~Cypis</li>
-            </ul>
-        </section>
-        <footer>2020 Karol Adameczek<br><a class="repository-link" href="google.com">repozytorium</a></footer>
-    </body>
-</html>
+{% extends 'base.html' %}
+{% block content %}
+<h1>Strona główna</h1>
+<p class="company-description">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+</p>
+<h2>Opinie klientów</h2>
+<ul class="customer-opinions">
+    <li><span class="opinion-quote">„Szybki jak jaszczurka, ostry jak przecinak”</span> ~Zygzak McQueen</li>
+    <li><span class="opinion-quote">„Niech żyją paczkomaty”</span> ~Klocuch</li>
+    <li><span class="opinion-quote">„Tylko jedno w głowie mam, paczki wysyłam”</span> ~Cypis</li>
+</ul>
+{% endblock %}

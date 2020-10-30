@@ -1,40 +1,22 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-        <link rel="stylesheet" type="text/css" href="/static/main.css">
-        <script src="/static/main.js"></script>
-        <link rel="icon" href="/static/Adameczkomat.png">
-        <title>Adameczkomat - Rejestracja</title>
-    </head>
-    <body>
-        <header class="bg-dark">
-            <a href="/"><img src="/static/Adameczkomat.png" class="logo-image" /></a>
-                <br><span class="company-name-span">Adameczkomat</span>
-                <br>Karol Adameczek
-        </header>
-        <nav class="navbar">
-            <section class="navbar-item-section"><a class="navbar-link" href="/">Strona główna</a></section>
-            <section class="navbar-item-section"><a class="navbar-link" href="/sender/sign-up">Rejestracja</a></section>
-        </nav>
-        <section>
-            <h1>Rejestracja</h1>
-            <form id="register_form" method="POST" enctype='multipart/form-data' action="https://infinite-hamlet-29399.herokuapp.com/sender/register">
-                <ul>
-                    <li><input type="text" id="login" name="login" placeholder="Nazwa uzytkownika"/></li>
-                    <li><input type="text" id="firstname" name="firstname" placeholder="Imię"/></li>
-                    <li><input type="text" id="lastname" name="lastname" placeholder="Nazwisko"/></li>
-                    <li><input type="password" id="password" name="password" placeholder="Hasło"/></li>
-                    <li><input type="password" id="repeated_password" name="repeated_password" placeholder="Powtórz hasło"/></li>
-                    <li>Płeć: <select name="sex" id="sex">
-                        <option value="K">Kobieta</option>
-                        <option value="M">Mężczyzna</option>
-                    </select></li>
-                    <li><input required type="file" id="photo" name="photo" accept=".jpg,.png"/></li>
-                    <li><input type="submit" id="submit" name="submit" value="Zarejestruj"/></li>
-                </ul>
-            </form>
-        </section>
-        <footer>2020 Karol Adameczek<br><a class="repository-link" href="google.com">repozytorium</a></footer>
-    </body> 
-</html>
+{% extends 'base.html' %}
+{% block headers %}
+<script src="/static/registration.js"></script>
+{% endblock %} 
+{% block content %}
+<h1>Rejestracja</h1>
+<form id="register_form" method="POST" enctype='multipart/form-data' action="https://infinite-hamlet-29399.herokuapp.com/sender/register">
+    <ul>
+        <li><input type="text" id="login" name="login" placeholder="Nazwa uzytkownika"/></li>
+        <li><input type="text" id="firstname" name="firstname" placeholder="Imię"/></li>
+        <li><input type="text" id="lastname" name="lastname" placeholder="Nazwisko"/></li>
+        <li><input type="password" id="password" name="password" placeholder="Hasło"/></li>
+        <li><input type="password" id="repeated_password" name="repeated_password" placeholder="Powtórz hasło"/></li>
+        <li>Płeć: <select name="sex" id="sex">
+            <option value="K">Kobieta</option>
+            <option value="M">Mężczyzna</option>
+        </select></li>
+        <li><input required type="file" id="photo" name="photo" accept=".jpg,.png"/></li>
+        <li><input type="submit" id="submit" name="submit" value="Zarejestruj"/></li>
+    </ul>
+</form>
+{% endblock %}   
