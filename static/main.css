@@ -1,0 +1,100 @@
+input {
+    width: 400px;
+    height: 40px;
+}
+
+input:invalid {
+    border-color: red;
+}
+
+li{
+    margin-top: 10px;
+}
+
+ul{ 
+    padding: 0;
+    list-style-type: none;
+}
+
+body {
+    text-align: center;
+}
+
+header{
+    padding-top: 50px;
+    padding-bottom: 20px;
+    color: white;
+    font-size: 20px;
+}
+
+footer {
+    background: #d1d1d1;
+    margin-top: 100px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    align-content: center;
+}
+
+.navbar{
+    background-color: #282d31;
+    margin-bottom: 20px;
+    padding: 20%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.navbar-item-section {
+    margin: auto;
+    width: 180px;
+}
+
+.navbar-link {
+    text-align: center;
+    font-size: 20px;
+    color: white;
+    padding: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.navbar-link:hover {
+    background: #24282d;
+    padding: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+    color: white;
+    text-decoration: none;
+}
+
+.repository-link {
+    color: #000000;
+}
+
+
+
+.logo-image {
+    width: 30%;
+    height: auto;
+}
+
+.main-content {
+    width: 50%;
+    margin: auto;
+}
+
+.company-name-span {
+    font-weight: 600;
+    font-size: 30px;
+}
+
+.company-description {
+    font-size: 30px;
+}
+
+.customer-opinions {
+    font-size: 20px;
+}
+
+.opinion-quote {
+    font-weight: 600
+}
