@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block headers %}
+<script src="/static/register.js"></script>
+{% endblock %} 
+{% block content %}
+<h1>Rejestracja</h1>
+{% with messages = get_flashed_messages() %}
+ {% if messages %}
+ <ul class=flashes>
+ {% for message in messages %}
+ <li class="flash-message">{{ message }}</li>
+ {% endfor %}
+ </ul>
+ {% endif %}
+{% endwith %}
+<form id="register_form" method="POST" enctype='multipart/form-data'>
+    <ul>
+        <li><input type="text" id="username" name="username" placeholder="Nazwa uzytkownika"/></li>
+        <li><input type="text" id="email" name="email" placeholder="E-mail"/></li>
+        <li><input type="text" id="firstname" name="firstname" placeholder="Imię"/></li>
+        <li><input type="text" id="lastname" name="lastname" placeholder="Nazwisko"/></li>
+        <li><input type="password" id="password" name="password" placeholder="Hasło"/></li>
+        <li><input type="password" id="password2" name="password2" placeholder="Powtórz hasło"/></li>
+        <li><input type="text" id="address" name="address" placeholder="Adres"/></li>
+        <li><input type="submit" id="submit" name="submit" value="Zarejestruj"/></li>
+    </ul>
+</form>
+{% endblock %}   
