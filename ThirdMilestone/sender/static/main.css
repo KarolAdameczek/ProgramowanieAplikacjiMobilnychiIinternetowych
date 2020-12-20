@@ -1,0 +1,144 @@
+input {
+    width: 400px;
+    max-width: 100%;
+    height: 40px;
+    border: 1px solid #282d31;
+    border-radius: 4px;
+}
+
+li{
+    margin: auto;
+    margin-top: 10px;
+    max-width: 400px;
+}
+
+ul{ 
+    padding: 0;
+    list-style-type: none;
+}
+
+body {
+    text-align: center;
+}
+
+header{
+    padding-top: 50px;
+    padding-bottom: 20px;
+    color: white;
+    font-size: 20px;
+}
+
+footer {
+    background: #d1d1d1;
+    margin-top: 100px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    align-content: center;
+}
+
+main {
+    width: 50%;
+    margin: auto;
+}
+
+.label-delete-button{
+    width: 150px;
+    height: 30px;
+}
+
+.label-ul{
+    padding: 0;
+    text-align: left;
+    margin: auto;
+    list-style-type: unset;
+}
+
+.label-inside-ul{
+    padding-left: 15px;
+    text-align: left;
+    margin: auto;
+    list-style-type: circle;
+}
+
+.username{
+    font-weight: bold;
+}
+
+.flash-message{
+    color: red;
+}
+
+.field-invalid {
+    background-color: #ffb5b5;
+}
+
+.field-valid {
+    background-color: #d3ffcc;
+}
+
+.error-span-invalid {
+    color: red;
+}
+
+.error-span-hidden {
+    visibility: hidden;
+}
+
+.navbar{
+    background-color: #282d31;
+    margin-bottom: 20px;
+    padding: 20%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.navbar-item-section {
+    margin: auto;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    width: 180px;
+}
+
+.navbar-link {
+    text-align: center;
+    font-size: 20px;
+    color: white;
+    padding: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.navbar-link:hover {
+    background: #24282d;
+    padding: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+    color: white;
+    text-decoration: none;
+}
+
+.repository-link {
+    color: #000000;
+}
+
+.logo-image {
+    width: 30%;
+    height: auto;
+}
+
+.company-name-span {
+    font-weight: 600;
+    font-size: 30px;
+}
+
+.company-description {
+    font-size: 30px;
+}
+
+.customer-opinions {
+    font-size: 20px;
+}
+
+.opinion-quote {
+    font-weight: 600
+}
