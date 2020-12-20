@@ -1,6 +1,6 @@
 # Trzeci kamień milowy
 
-**Na początek chciałbym zaznaczyć, że zauważyłem, iż ktoś oprócz mnie korzystał z mojej bazy danych, tj. numer 13 w Pańskim Redisie, więc prosiłbym, żeby wykonał Pan FLUSHDB na tej bazie przed rozpoczęciem testowania, aby nie wystąpiły błędy związane ze stosowaniem innego formatu danych przez drugą osobę. **
+**Na początek chciałbym zaznaczyć, że zauważyłem, iż ktoś oprócz mnie korzystał z mojej bazy danych, tj. numer 13 w Pańskim Redisie, więc prosiłbym, żeby wykonał Pan FLUSHDB na tej bazie przed rozpoczęciem testowania, aby nie wystąpiły błędy związane ze stosowaniem innego formatu danych przez drugą osobę.**
 
 
 
