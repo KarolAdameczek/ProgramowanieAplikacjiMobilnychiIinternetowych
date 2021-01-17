@@ -1,0 +1,71 @@
+{% extends 'base.html' %}
+{% block headers %}
+{% if token %}
+<script>
+    const token = "{{token}}"
+    const socket_url = "{{socket_url}}"
+</script>
+{% endif %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/3.0.4/socket.io.js" integrity="sha512-aMGMvNYu8Ue4G+fHa359jcPb1u+ytAF+P2SCb+PxrjCdO3n3ZTxJ30zuH39rimUggmTwmh2u7wvQsDTHESnmfQ==" crossorigin="anonymous"></script>
+<script src="/static/dashboard.js"></script>
+{% endblock %} 
+{% block content %}
+<h1>Kokpit</h1>
+{% with sizes = packageSizes, dests = packageDestinations %}
+{% if sizes and dests %}
+<h2>Dodaj etykietę</h2>
+{% with messages = get_flashed_messages() %}
+ {% if messages %}
+ <ul class=flashes>
+ {% for message in messages %}
+ <li class="flash-message">{{ message }}</li>
+ {% endfor %}
+ </ul>
+ {% endif %}
+{% endwith %}
+<form id="label_form" method="POST" enctype='multipart/form-data'>
+    <ul>
+        <li><input type="text" id="person" name="person" placeholder="Adresat"/></li>
+        <li>Rozmiar paczki: <select name="size" id="size">
+            {% for key in sizes %}
+            <option value="{{key}}">{{sizes[key]}}</option>
+            {% endfor %}
+        </select></li>
+        <li>Paczkomat: <select name="destination" id="destination">
+            {% for key in dests %}
+            <option value="{{key}}">{{dests[key]}}</option>
+            {% endfor %}
+        </select></li>
+        <li><input type="submit" id="submit" name="submit" value="Generuj"></li>
+    </ul>
+</form>
+{% else %}
+<p>Błąd w systemie dodawania etykiet, skontaktuj się z Administratorem</p>
+{% endif %}
+{% endwith %}
+<h2>Stworzone etykiety</h2>
+{% with labels = getCurrentUserLabels() %}
+    {% if labels %}
+        <ul class="label-ul">
+            {% for label in labels %}
+            <li class="label-li">{{ label["id"] }}
+                <ul class="label-inside-ul">
+                    <li>Adresat: {{ label["person"] }}</li>
+                    <li>Paczkomat: {{ label["destination"] }}</li>
+                    <li>Rozmiar paczki: {{ packageSizes[label["size"]] }}</li>
+                    {% if label["state"] == "created" %}
+                    <form class="label-delete-form" action="/sender/dashboard/removelabel/" method="POST" enctype='multipart/form-data'>
+                        <input type="hidden" id="label" name="label" value={{label["id"]}} />
+                        <input type="submit" class="label-delete-button"  id="submit-label" name="submit" value="Usuń etykietę" />
+                    </form>
+                    {% endif %}
+                </ul>
+            </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+ <p>Nie stworzono jeszcze żadnych etykiet</p>
+ {% endif %}
+{% endwith %}
+{% endblock %}   
