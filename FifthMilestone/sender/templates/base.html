@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="/static/main.css">
+        <link rel="icon" href="/static/Adameczkomat.png">
+        <title>Adameczkomat</title>
+        {% block headers %}{% endblock %}
+    </head>
+    <body>
+        <header class="bg-dark">
+            <a href="/"><img src="/static/Adameczkomat.png" class="logo-image" /></a>
+                <p><span class="company-name-span">Adameczkomat</span></p>
+                {% if userLogged() %} <p>Zalogowany jako <span class="username">{{ session["display-name"] }}</span></p> {% endif %}
+        </header>
+        <nav class="navbar">
+            <section class="navbar-item-section"><a class="navbar-link" href="/">Strona główna</a></section>
+            {% if userLogged() %}
+            <section class="navbar-item-section"><a class="navbar-link" href="/sender/dashboard">Kokpit</a></section>
+            <section class="navbar-item-section"><a class="navbar-link" href="/sender/logout" method="POST">Wyloguj</a></section>
+            {% else %}
+            <section class="navbar-item-section"><a class="navbar-link" href="/sender/register">Rejestracja</a></section>
+            <section class="navbar-item-section"><a class="navbar-link" href="/sender/login">Logowanie</a></section>
+            {% endif %}
+        </nav>
+        <main>
+            {% block content %}{% endblock %}
+        </main>
+        <footer>2020 Karol Adameczek<br><a class="repository-link" href="https://github.com/KarolAdameczek/ProgramowanieAplikacjiMobilnychiIinternetowych">repozytorium</a></footer>
+    </body>
+<html></html>

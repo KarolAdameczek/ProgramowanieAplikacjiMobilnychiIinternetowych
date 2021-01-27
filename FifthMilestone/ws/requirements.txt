@@ -1,0 +1,9 @@
+Flask
+Flask-HAL
+PyJWT 
+gunicorn
+python-dotenv
+redis
+six
+python-jose
+pika

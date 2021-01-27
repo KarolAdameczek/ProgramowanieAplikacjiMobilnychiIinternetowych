@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block headers %}
+<script src="/static/login.js"></script>
+{% endblock %} 
+{% block content %}
+<h1>Logowanie</h1>
+{% with messages = get_flashed_messages() %}
+ {% if messages %}
+ <ul class=flashes>
+ {% for message in messages %}
+ <li class="flash-message">{{ message }}</li>
+ {% endfor %}
+ </ul>
+ {% endif %}
+{% endwith %}
+<form id="login_form" method="POST" enctype='multipart/form-data'>
+    <ul>
+        <li><input type="text" id="username" name="username" placeholder="Nazwa uzytkownika"/></li>
+        <li><input type="password" id="password" name="password" placeholder="Hasło"/></li>
+        <li><input type="submit" id="submit" name="submit" value="Zaloguj"/></li>
+    </ul>
+</form>
+<p>lub</p>
+<a href="/auth0/login"><img src="/static/auth0.png" class="img-fluid rounded mx-aut auth0-image"></a>
+{% endblock %}   
